@@ -52,9 +52,9 @@ public class DBConfig {
 
     private Properties properties() {
         Properties props = new Properties();
-        props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
-        props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
-        props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
+        props.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
+        props.put("hibernate.hbm2ddl.auto", env.getRequiredProperty("hibernate.hbm2ddl.auto"));
+        props.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
         return props;
     }
 
@@ -65,8 +65,8 @@ public class DBConfig {
         return transactionManager;
     }
 
-    @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-        return new PersistenceExceptionTranslationPostProcessor();
-    }
+//    @Bean
+//    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+//        return new PersistenceExceptionTranslationPostProcessor();
+//    }
 }
