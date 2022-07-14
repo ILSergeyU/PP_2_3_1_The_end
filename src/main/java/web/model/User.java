@@ -17,7 +17,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String name, String lastName){
+    public User(Long id, String name, String lastName) {
         super();
         setId(id);
         setName(name);
@@ -46,5 +46,16 @@ public class User {
 
     public String getLastName() {
         return lastName;
+    }
+
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("User{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

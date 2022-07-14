@@ -25,7 +25,9 @@ public class UserDaoImp implements UserDao {
         List<User> users = new ArrayList<>();
         for (long a = 1; a < 10; a++) {
             users.add(new User(a, "Name " + a, "lastName " + a));
+            System.out.print("_"+a);
         }
+        System.out.println();
         //TypedQuery<User> query = entityManager.createQuery("FROM User", User.class);
         return users;
     }

@@ -22,6 +22,7 @@ public class UsersController {
     @GetMapping(value = "/")
     public String printUsers(Model model) {
         List<User> users = userService.getUsersList();
+        System.out.println("    size "+users.size());
         model.addAttribute("users", users);
         return "index";
     }
