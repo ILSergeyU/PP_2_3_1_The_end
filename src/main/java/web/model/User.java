@@ -3,7 +3,7 @@ package web.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +17,8 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String name, String lastName) {
+    public User(String name, String lastName) {
         super();
-        setId(id);
         setName(name);
         setLastName(lastName);
     }
@@ -51,11 +50,6 @@ public class User {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("User{");
-        sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", lastName='").append(lastName).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return String.format("User{id=%d, name='%s', lastName='%s'}", id, name, lastName);
     }
 }

@@ -14,20 +14,19 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@PropertySource("classpath:db.properties")
-@ComponentScan(value = "web")
+@PropertySource(value = "classpath:db.properties")
+@ComponentScan(basePackages = "web")
 @EnableTransactionManagement
 public class DBConfig {
 
-    private final Environment env;
+    private Environment env;
 
     @Autowired
-    public DBConfig(Environment env) {
+    public void setEnvironment(Environment env) {
         this.env = env;
     }
 
@@ -71,8 +70,4 @@ public class DBConfig {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-//    @Bean
-//    public EntityManager entityManager() {
-//        return entityManagerFactory().getObject().createEntityManager();
-//    }
 }

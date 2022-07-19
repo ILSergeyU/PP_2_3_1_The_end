@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new user</title>
+</head>
+<body>
+<form action="#" th:action="@{/}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" th:field="${user.name}"></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input type="text" name="lastName" th:field="${user.lastName}"></td>
+        </tr>
+        <tr>
+            <td>
+                <bytton type="submit" class="btn btn-primary">Submit</bytton>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
