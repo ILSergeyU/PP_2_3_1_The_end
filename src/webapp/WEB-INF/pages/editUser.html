@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Add new user</title>
+    <meta charset="utf-8">
+    <title>Edit user</title>
 </head>
 <body>
 <form action="#"
@@ -12,16 +12,16 @@
       method="post">
     <table>
         <tr>
+            <td></td>
+            <td><input type="text" hidden name="id" th:field="${user.id}"/></td>
+        </tr>
+        <tr>
             <td>Name</td>
-            <td><label>
-                <input type="text" name="name" th:field="${user.name}"/>
-            </label></td>
+            <td><input type="text" name="name" th:field="${user.name}"/></td>
         </tr>
         <tr>
             <td>Last Name</td>
-            <td><label>
-                <input type="text" name="lastName" th:field="${user.lastName}"/>
-            </label></td>
+            <td><input type="text" name="lastName" th:field="${user.lastName}"/></td>
         </tr>
         <tr>
             <td>
